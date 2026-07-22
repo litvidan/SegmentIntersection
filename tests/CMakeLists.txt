@@ -1,0 +1,13 @@
+add_executable(test_vector3d test_vector3d.cpp)
+target_link_libraries(test_vector3d PRIVATE segment_intersection GTest::gtest_main)
+
+add_executable(test_segment3d test_segment3d.cpp)
+target_link_libraries(test_segment3d PRIVATE segment_intersection GTest::gtest_main)
+
+add_executable(test_intersection test_intersection.cpp)
+target_link_libraries(test_intersection PRIVATE segment_intersection GTest::gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(test_vector3d)
+gtest_discover_tests(test_segment3d)
+gtest_discover_tests(test_intersection)
